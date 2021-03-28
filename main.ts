@@ -5,10 +5,6 @@ input.onButtonPressed(Button.A, function () {
     pins.digitalWritePin(DigitalPin.P1, 1)
     pins.digitalWritePin(DigitalPin.P2, 1)
 })
-// Randomly light up an LED
-input.onButtonPressed(Button.AB, function () {
-	
-})
 // Sad Face and none-light up
 input.onButtonPressed(Button.B, function () {
     basic.showIcon(IconNames.Sad)
