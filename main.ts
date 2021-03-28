@@ -6,6 +6,7 @@ input.onButtonPressed(Button.A, function () {
     pins.digitalWritePin(DigitalPin.P1, 1)
     pins.digitalWritePin(DigitalPin.P2, 1)
 })
+// randomly select one to light
 input.onButtonPressed(Button.AB, function () {
     choice = randint(0, 2)
     if (choice == 0) {
