@@ -3,7 +3,6 @@ function allControl (onoff: number) {
     pins.digitalWritePin(DigitalPin.P0, onoff)
     pins.digitalWritePin(DigitalPin.P1, onoff)
     pins.digitalWritePin(DigitalPin.P2, onoff)
-    pins.digitalWritePin(DigitalPin.P3, onoff)
 }
 // Happy Face and all light up!
 input.onButtonPressed(Button.A, function () {
@@ -18,10 +17,8 @@ input.onButtonPressed(Button.AB, function () {
         pins.digitalWritePin(DigitalPin.P0, 1)
     } else if (choice == 1) {
         pins.digitalWritePin(DigitalPin.P1, 1)
-    } else if (false) {
-        pins.digitalWritePin(DigitalPin.P2, 1)
     } else {
-        pins.digitalWritePin(DigitalPin.P3, 1)
+        pins.digitalWritePin(DigitalPin.P2, 1)
     }
 })
 // Sad Face and none-light up
