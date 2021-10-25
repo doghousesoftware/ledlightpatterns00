@@ -1,13 +1,17 @@
 let choice = 0
+function allControl (onoff: number) {
+    pins.digitalWritePin(DigitalPin.P0, onoff)
+    pins.digitalWritePin(DigitalPin.P1, onoff)
+    pins.digitalWritePin(DigitalPin.P2, onoff)
+}
 // Happy Face and all light up!
 input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Happy)
-    pins.digitalWritePin(DigitalPin.P0, 1)
-    pins.digitalWritePin(DigitalPin.P1, 1)
-    pins.digitalWritePin(DigitalPin.P2, 1)
+    allControl(1)
 })
 // randomly select one to light
 input.onButtonPressed(Button.AB, function () {
+    allControl(0)
     choice = randint(0, 2)
     if (choice == 0) {
         pins.digitalWritePin(DigitalPin.P0, 1)
@@ -20,7 +24,5 @@ input.onButtonPressed(Button.AB, function () {
 // Sad Face and none-light up
 input.onButtonPressed(Button.B, function () {
     basic.showIcon(IconNames.Sad)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-    pins.digitalWritePin(DigitalPin.P1, 0)
-    pins.digitalWritePin(DigitalPin.P2, 0)
+    allControl(0)
 })
